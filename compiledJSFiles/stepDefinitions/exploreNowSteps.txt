@@ -1,0 +1,45 @@
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const cucumber_1 = require("cucumber");
+const exploreNowPage_1 = require("../pageObjects/exploreNowPage");
+//import { preferencesPage } from "../pageObjects/preferencesPage";
+const chai_1 = __importDefault(require("chai"));
+const protractor_1 = require("protractor");
+let enpObj = new exploreNowPage_1.exploreNowPage();
+//let prefpObj = new preferencesPage();
+var expect = chai_1.default.expect;
+cucumber_1.Given('I am a loggoedIn user to Cloud University portal', function () {
+    console.log("Welcome to Explore now page");
+});
+cucumber_1.When('I click on Explore Now button', () => __awaiter(void 0, void 0, void 0, function* () {
+    yield enpObj.actionButton.click();
+    yield protractor_1.browser.driver.sleep(10000);
+}));
+//Then('I should be redirected to {string} page.', async (string) => {
+// let hText = await enpObj.prefHeading;
+//  await hText().getText().then(function (title) {            
+//   console.log(title);
+//    expect(title).to.equal(string);
+// console.log(title);
+// });
+// });
+cucumber_1.Then('I should be redirected to {string} page.', (string) => __awaiter(void 0, void 0, void 0, function* () {
+    let hText = yield enpObj.prefHeading;
+    yield hText.getText().then(function (title) {
+        console.log(title);
+        expect(title).to.equal(string);
+    });
+}));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXhwbG9yZU5vd1N0ZXBzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vc3RlcERlZmluaXRpb25zL2V4cGxvcmVOb3dTdGVwcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7OztBQUFBLHVDQUE2QztBQUM3QyxrRUFBK0Q7QUFDL0QsbUVBQW1FO0FBQ25FLGdEQUF3QjtBQUN4QiwyQ0FBcUM7QUFFckMsSUFBSSxNQUFNLEdBQUcsSUFBSSwrQkFBYyxFQUFFLENBQUM7QUFDbEMsdUNBQXVDO0FBQ3ZDLElBQUksTUFBTSxHQUFHLGNBQUksQ0FBQyxNQUFNLENBQUM7QUFFekIsZ0JBQUssQ0FBQyxrREFBa0QsRUFBRTtJQUN0RCxPQUFPLENBQUMsR0FBRyxDQUFDLDZCQUE2QixDQUFDLENBQUM7QUFDN0MsQ0FBQyxDQUFDLENBQUM7QUFHSCxlQUFJLENBQUMsK0JBQStCLEVBQUUsR0FBUyxFQUFFO0lBQy9DLE1BQU0sTUFBTSxDQUFDLFlBQVksQ0FBQyxLQUFLLEVBQUUsQ0FBQztJQUNsQyxNQUFNLG9CQUFPLENBQUMsTUFBTSxDQUFDLEtBQUssQ0FBQyxLQUFLLENBQUMsQ0FBQztBQUNwQyxDQUFDLENBQUEsQ0FBQyxDQUFDO0FBR0gsc0VBQXNFO0FBQ3BFLHdDQUF3QztBQUV4QywrREFBK0Q7QUFDL0Qsd0JBQXdCO0FBQ3hCLHFDQUFxQztBQUNyQyxzQkFBc0I7QUFDdEIsTUFBTTtBQUVULE1BQU07QUFFTixlQUFJLENBQUMsMENBQTBDLEVBQUUsQ0FBTSxNQUFNLEVBQUUsRUFBRTtJQUNoRSxJQUFJLEtBQUssR0FBRyxNQUFNLE1BQU0sQ0FBQyxXQUFXLENBQUM7SUFDckMsTUFBTSxLQUFLLENBQUMsT0FBTyxFQUFFLENBQUMsSUFBSSxDQUFDLFVBQVUsS0FBSztRQUMxQyxPQUFPLENBQUMsR0FBRyxDQUFDLEtBQUssQ0FBQyxDQUFDO1FBQ2xCLE1BQU0sQ0FBQyxLQUFLLENBQUMsQ0FBQyxFQUFFLENBQUMsS0FBSyxDQUFDLE1BQU0sQ0FBQyxDQUFDO0lBRTdCLENBQUMsQ0FBQyxDQUFDO0FBRVIsQ0FBQyxDQUFBLENBQUMsQ0FBQyJ9

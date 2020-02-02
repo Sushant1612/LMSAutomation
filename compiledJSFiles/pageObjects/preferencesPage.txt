@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const protractor_1 = require("protractor");
+class preferencesPage {
+    constructor() {
+        this.prefHeading = protractor_1.element(protractor_1.by.class('.main-header-text'));
+        this.chkBoxes = protractor_1.element(protractor_1.by.xpath("input[@type='checkbox']"));
+        this.prefList = protractor_1.element(protractor_1.by.xpath("//h4[@class='preference-name']"));
+        this.skipButton = protractor_1.element(protractor_1.by.xpath("//span[contains(text(),'SKIP')]"));
+        this.saveMyPreferencesButton = protractor_1.element(protractor_1.by.xpath("//span[contains(text(),'SAVE MY PREFERENCES')]"));
+    }
+}
+exports.preferencesPage = preferencesPage;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJlZmVyZW5jZXNQYWdlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vcGFnZU9iamVjdHMvcHJlZmVyZW5jZXNQYWdlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsMkNBQXdEO0FBRXhELE1BQWEsZUFBZTtJQVN4QjtRQUVJLElBQUksQ0FBQyxXQUFXLEdBQUcsb0JBQU8sQ0FBQyxlQUFFLENBQUMsS0FBSyxDQUFDLG1CQUFtQixDQUFDLENBQUMsQ0FBQztRQUMxRCxJQUFJLENBQUMsUUFBUSxHQUFHLG9CQUFPLENBQUMsZUFBRSxDQUFDLEtBQUssQ0FBQyx5QkFBeUIsQ0FBQyxDQUFDLENBQUM7UUFDN0QsSUFBSSxDQUFDLFFBQVEsR0FBRyxvQkFBTyxDQUFDLGVBQUUsQ0FBQyxLQUFLLENBQUMsZ0NBQWdDLENBQUMsQ0FBQyxDQUFDO1FBQ3BFLElBQUksQ0FBQyxVQUFVLEdBQUcsb0JBQU8sQ0FBQyxlQUFFLENBQUMsS0FBSyxDQUFDLGlDQUFpQyxDQUFDLENBQUMsQ0FBQztRQUN2RSxJQUFJLENBQUMsdUJBQXVCLEdBQUcsb0JBQU8sQ0FBQyxlQUFFLENBQUMsS0FBSyxDQUFDLGdEQUFnRCxDQUFDLENBQUMsQ0FBQztJQUN2RyxDQUFDO0NBQ0o7QUFqQkQsMENBaUJDIn0=
